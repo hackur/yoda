@@ -1,0 +1,9 @@
+.titlebar {
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  background-color: tomato;
+  color: white;
+}

@@ -1,0 +1,5 @@
+{
+  "name": "titlebar",
+  "main": "./titlebar.js",
+  "private": true
+}

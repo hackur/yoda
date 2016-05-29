@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev-server": "node -r babel-register server.js",
+    "dev-browser": "cross-env HOT=1 NODE_ENV=development electron -r babel-register ./app/browser/index.js",
+    "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run dev-browser\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +19,44 @@
   "bugs": {
     "url": "https://github.com/whoisandie/yoda/issues"
   },
-  "homepage": "https://github.com/whoisandie/yoda#readme"
+  "homepage": "https://github.com/whoisandie/yoda#readme",
+  "devDependencies": {
+    "babel-core": "^6.9.0",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-polyfill": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "concurrently": "^2.1.0",
+    "cross-env": "^1.0.8",
+    "css-loader": "^0.23.1",
+    "electron-debug": "^1.0.0",
+    "electron-packager": "^7.0.2",
+    "electron-prebuilt": "^1.2.0",
+    "electron-rebuild": "^1.1.5",
+    "eslint": "^2.11.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.1",
+    "eslint-plugin-jsx-a11y": "^1.2.2",
+    "eslint-plugin-react": "^5.1.1",
+    "express": "^4.13.4",
+    "json-loader": "^0.5.4",
+    "redux-logger": "^2.6.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
+  },
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.4.1",
+    "react-router-redux": "^4.0.4",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0"
+  }
 }
