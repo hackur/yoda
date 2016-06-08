@@ -1,0 +1,28 @@
+.playlistContainer {
+  flex: 1;
+}
+
+.playlistItems {
+  overflow: hidden;
+}
+
+.playlistTitle {
+  margin: 0;
+  margin-bottom: 8px;
+}
+.playlistItem {
+  width: 176px;
+  height: 90px;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  margin-right: 12px;
+  box-sizing: border-box;
+  background-color: #ff6347;
+  color: #ffffff;
+}
+.playlistItem:nth-child(4n) {
+  margin-right: 0;
+}

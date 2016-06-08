@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import styles from './titlebar.css'
+import styles from 'styles/titlebar.css'
 
 export default class Titlebar extends Component {
   render() {
+    const { className } = this.props
     return (
-      <header className={styles.titlebar}></header>
+      <header className={className}></header>
     );
   }
 }

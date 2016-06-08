@@ -1,0 +1,12 @@
+.channel {
+  padding: 20px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.channelContainer {
+  overflow: hidden;
+}

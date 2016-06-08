@@ -11,4 +11,13 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+#root.os-darwin {
+  
 }

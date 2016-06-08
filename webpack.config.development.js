@@ -1,10 +1,10 @@
 /* eslint max-len: 0 */
 import path from 'path'
 import webpack from 'webpack'
-import baseConfig from './webpack.config.base'
+import baseCfg from './webpack.config.base'
 
 const config = {
-  ...baseConfig,
+  ...baseCfg,
 
   debug: true,
 
@@ -12,18 +12,18 @@ const config = {
 
   entry: [
     'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
-    path.resolve(__dirname, '../app/renderer/index.js')
+    path.resolve(__dirname, 'app/renderer/renderer.js')
   ],
 
   output: {
-    ...baseConfig.output,
-    publicPath: 'http://localhost:3000/dist/'
+    ...baseCfg.output,
+    publicPath: 'http://localhost:3000/dist/renderer'
   },
 
   module: {
-    ...baseConfig.module,
+    ...baseCfg.module,
     loaders: [
-      ...baseConfig.module.loaders,
+      ...baseCfg.module.loaders,
       {
         test: /\.global\.css$/,
         loaders: [
@@ -43,7 +43,7 @@ const config = {
   },
 
   plugins: [
-    ...baseConfig.plugins,
+    ...baseCfg.plugins,
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({

@@ -3,7 +3,7 @@ import express from 'express'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
-import webpackCfg from './webpack/webpack.config.dev'
+import webpackCfg from './webpack.config.development'
 
 const PORT = 3000
 const app = express()
