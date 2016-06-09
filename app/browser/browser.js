@@ -34,7 +34,7 @@ function createMainWindow() {
     minheight: 600,
     resizable: false,
     fullscreen: false,
-    // titleBarStyle: 'hidden-inset',
+    titleBarStyle: 'hidden-inset',
     autoHideMenuBar: true,
     frame: false,
     show: false

@@ -1,9 +1,12 @@
 import React from 'react'
+import s from 'styles/playlist-item.css'
 
 const PlaylistItem = (props) => {
-  const { className, style } = props
+  const { style } = props
   return (
-    <div className={className} style={style}>
+    <div
+      className={s.playlistItem}
+      style={style}>
       Playlist item
     </div>
   )

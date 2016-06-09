@@ -1,0 +1,46 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  cursor: default;
+}
+
+img {
+  pointer-events: none;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;;
+  font-weight: normal;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+  margin: 0;
+  padding: 0;
+}
+
+p{
+  margin-bottom: 10px;
+}
+
+#root.os-darwin {
+
+}

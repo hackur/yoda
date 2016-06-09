@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
+import styles from 'styles/sidebar.css'
 
-export default class Main extends Component {
+class Sidebar extends Component {
   render() {
     const { className } = this.props;
     return (
       <div className={className}>
-        {this.props.children}
+        <h2>Best of youtube</h2>
       </div>
-    )
+    );
   }
 }
+
+export default Sidebar

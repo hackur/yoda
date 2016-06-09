@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import styles from 'styles/titlebar.css'
 
-export default class Titlebar extends Component {
+class Titlebar extends Component {
   render() {
     const { className } = this.props
     return (
@@ -10,3 +9,5 @@ export default class Titlebar extends Component {
     );
   }
 }
+
+export default Titlebar

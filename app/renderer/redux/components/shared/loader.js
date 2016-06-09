@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Motion, spring, presets } from 'react-motion'
+import s from 'styles/loader.css'
 
 class Loader extends Component {
   getDefault() {
@@ -13,7 +14,7 @@ class Loader extends Component {
   render() {
     return (
       <Motion defaultStyle={this.getDefault()} style={this.getStyle()}>
-        {interpolatingStyle => <div style={interpolatingStyle}>Loading...</div>}
+        {interpolatingStyle => <div className={s.loader} style={interpolatingStyle}>Loading...</div>}
       </Motion>
     )
   }

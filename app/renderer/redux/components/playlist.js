@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StaggeredMotion, spring } from 'react-motion'
-import PlaylistItem from 'components/playlistItem'
-import { uuid, getSpringConfig } from 'helpers'
+import PlaylistItem from 'redux/components/playlist-item'
+import { uuid, getSpringConfig } from 'redux/utils'
 import s from 'styles/playlist.css'
 
 const springConfig = getSpringConfig(500, 30)
@@ -22,7 +22,7 @@ class Playlist extends Component {
   render() {
     const {style} = this.props
     return (
-      <div className={s.playlistContainer} style={style}>
+      <div className={s.playlist} style={style}>
         <h2 className={s.playlistTitle}>Playlist title</h2>
         <StaggeredMotion
           defaultStyles={this.defaultStyles()}
@@ -33,7 +33,6 @@ class Playlist extends Component {
                 interpolatingStyles.map((style, i) =>
                   <PlaylistItem
                     key={uuid()}
-                    className={s.playlistItem}
                     style={{ WebkitTransform: `scale(${style.scale})` }}
                   />
                 )
