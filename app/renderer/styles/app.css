@@ -26,7 +26,6 @@
 }
 
 .content {
-  padding: 0;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -35,25 +34,24 @@
 
 .sidebar,
 .main {
+  padding: 20px 20px 0;
+  top: 36px;
   bottom: 0;
   position: absolute;
 }
 
 .sidebar {
-  padding: 56px 20px 20px;
   min-width: 220px;
   flex: 0 220px;
-  top: 0;
   background-color: #f9f9f9;
   border-right: 1px #d9d9d9 solid;
 }
 
 .main {
-  padding-left: 20px;
-  padding-right: 20px;
   flex-direction: row;
   overflow-y: scroll;
   flex: 1;
   left: 220px;
-  top: 36px;
+  right: 0;
+  bottom: 0;
 }

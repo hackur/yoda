@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Motion, StaggeredMotion, spring } from 'react-motion'
+import { Motion, StaggeredMotion, spring, presets } from 'react-motion'
 import Loader from 'redux/components/shared/loader'
 import Playlist from 'redux/components/playlist'
 import { uuid, getSpringConfig } from 'redux/utils'
@@ -14,7 +14,7 @@ class Home extends Component {
       loading: true
     }
   }
-  
+
   componentDidMount() {
     var self = this;
     setTimeout(() => {
@@ -24,12 +24,16 @@ class Home extends Component {
     }, 1000)
   }
 
-  defaultLoaderStyles() {
-    return {opacity: 0}
+  getDefaultStyles() {
+    return { opacity: 0 }
   }
 
-  defaultPlaylistStyles() {
-    return [{opacity: 0}, {opacity: 0}, {opacity: 0}, {opacity: 0}]
+  getStyles() {
+    return {opacity: spring(1, presets.gentle)}
+  }
+
+  getDefaultPlaylistStyles() {
+    return [{opacity: 0}, {opacity: 0}, {opacity: 0}, {opacity: 0}, {opacity: 0}]
   }
 
   getPlaylistStyles(prevStyles) {
@@ -43,19 +47,21 @@ class Home extends Component {
   renderPlaylist() {
     return (
       <StaggeredMotion
-        defaultStyles={this.defaultPlaylistStyles()}
+        defaultStyles={this.getDefaultPlaylistStyles()}
         styles={this.getPlaylistStyles}>
-        {interpolatingStyles =>
-          <div className={s.channelContainer}>
-            {
-              interpolatingStyles.map((style, i) =>
-                <Playlist
-                  key={uuid()}
-                  style={{ opacity: `${style.opacity}` }}
-                />
-              )
-            }
-          </div>
+        {
+          interpolatingStyles => (
+            <div className={s.channelContainer}>
+              {
+                interpolatingStyles.map(style =>
+                  <Playlist
+                    key={uuid()}
+                    style={{ opacity: `${style.opacity}` }}
+                  />
+                )
+              }
+            </div>
+          )
         }
       </StaggeredMotion>
     )
@@ -64,9 +70,17 @@ class Home extends Component {
   render() {
     const { loading } = this.state
     return (
-      <div className={s.channel}>
-        {loading ? <Loader /> : this.renderPlaylist()}
-      </div>
+      <Motion
+        defaultStyle={this.getDefaultStyles()}
+        style={this.getStyles()}>
+        {
+          interpolatingStyle => (
+            <div className={s.channel} style={interpolatingStyle}>
+              {loading ? <Loader /> : this.renderPlaylist()}
+            </div>
+          )
+        }
+      </Motion>
     )
   }
 }

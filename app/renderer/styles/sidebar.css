@@ -1,0 +1,9 @@
+.sidebarTitle {
+  text-transform: uppercase;
+}
+
+.sidebarLinks {
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
