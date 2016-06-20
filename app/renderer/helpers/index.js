@@ -3,13 +3,13 @@ export function uuid():string {
   return `${_s4()+_s4()}-${_s4()}-${_s4()}-${_s4()+_s4()+_s4()}`
 }
 
-export function ucfirst(str: string): string {
+export function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-export function getSpringConfig(stiffness, damping) {
-  return {
-    stiffness: stiffness,
-    damping: damping
-  }
-}
+// export function getSpringConfig(stiffness, damping) {
+//   return {
+//     stiffness: stiffness,
+//     damping: damping
+//   }
+// }
