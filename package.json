@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rimraf dist",
     "copy": "cp app/renderer/index.html dist/renderer/index.html",
     "dev-server": "node -r babel-register server.js",
     "dev-browser": "cross-env HOT=1 NODE_ENV=development electron -r babel-register ./app/browser/browser.js",
@@ -53,22 +53,20 @@
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
     "json-loader": "^0.5.4",
-    "redux-logger": "^2.6.1",
+    "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.10.0"
   },
   "dependencies": {
+    "aphrodite": "^0.4.0",
     "classnames": "^2.2.5",
+    "mobx": "^2.3.1",
+    "mobx-react": "^3.3.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "react-motion": "^0.4.4",
-    "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
-    "react-router-redux": "^4.0.5",
-    "redux": "^3.5.2",
-    "redux-thunk": "^2.1.0",
     "source-map-support": "^0.4.0"
   }
 }
